@@ -1,0 +1,3 @@
+[submodule "wolfBoot"]
+	path = wolfBoot
+	url = https://github.com/wolfSSL/wolfBoot.git
