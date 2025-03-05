@@ -14,9 +14,12 @@ RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
     lsb-release wget software-properties-common gnupg \
+    ninja-build pkg-config libglib2.0-dev \
     && apt-get clean
 
 RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
+
+ENV LLVM_CONFIG_PATH=/usr/bin/llvm-config-18
 
 # Create a new user with a home directory and set a default shell
 RUN useradd -m -s /bin/bash afluser
@@ -27,6 +30,12 @@ RUN echo 'afluser ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 # Switch to afluser and install Rust
 USER afluser
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+# Install just
+RUN wget -qO - 'https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub' | gpg --dearmor | sudo tee /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg 1> /dev/null
+RUN echo "deb [arch=all,$(dpkg --print-architecture) signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr $(lsb_release -cs)" | sudo tee /etc/apt/sources.list.d/prebuilt-mpr.list
+RUN sudo apt-get update
+RUN sudo apt-get install -y just
 
 # Set the working directory for the user
 WORKDIR /home/afluser
