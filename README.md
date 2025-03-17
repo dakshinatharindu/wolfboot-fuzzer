@@ -5,6 +5,8 @@
 2. Clone the repo.
     ```bash
     git clone https://github.com/dakshinatharindu/wolfboot-fuzzer.git
+    git submodule init
+    git submodule update
     ```
 3. Open the repo in Vscode.
 4. Download the `Dev Container` externsion for Vscode.
