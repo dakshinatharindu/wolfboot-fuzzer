@@ -17,6 +17,13 @@ RUN apt-get update && apt-get install -y \
     ninja-build pkg-config libglib2.0-dev \
     && apt-get clean
 
+# Install Risc-V toolchain
+RUN mkdir -p /opt/riscv
+RUN wget https://github.com/dakshinatharindu/dockerfiles/releases/download/rv32g/riscv.tar.gz
+RUN tar -xvf riscv.tar.gz -C /opt
+ENV PATH="/opt/riscv/bin:${PATH}"
+
+
 RUN bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"
 
 ENV LLVM_CONFIG_PATH=/usr/bin/llvm-config-18
