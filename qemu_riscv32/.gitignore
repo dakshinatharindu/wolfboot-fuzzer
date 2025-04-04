@@ -1,0 +1,5 @@
+*.qcow2
+*.o
+*.elf
+*.bin
+*.obj
