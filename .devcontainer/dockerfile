@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y \
     python3-pip \
     lsb-release wget software-properties-common gnupg \
     ninja-build pkg-config libglib2.0-dev \
+    qemu-utils qemu-system-misc \
     && apt-get clean
 
 # Install Risc-V toolchain
