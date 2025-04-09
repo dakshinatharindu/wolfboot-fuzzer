@@ -1,6 +1,0 @@
-[submodule "wolfBoot"]
-	path = wolfBoot
-	url = https://github.com/wolfSSL/wolfBoot.git
-[submodule "LibAFL"]
-	path = LibAFL
-	url = https://github.com/AFLplusplus/LibAFL
