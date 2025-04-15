@@ -4,3 +4,6 @@
 [submodule "wolfBoot"]
 	path = wolfBoot
 	url = https://github.com/dakshinatharindu/wolfBoot.git
+[submodule "wolfMQTT"]
+	path = wolfMQTT
+	url = https://github.com/wolfSSL/wolfMQTT.git
