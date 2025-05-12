@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     lsb-release wget software-properties-common gnupg \
     ninja-build pkg-config libglib2.0-dev \
     qemu-utils qemu-system-misc \
+    libtool automake autoconf libssl-dev locales libwolfssl-dev\
     && apt-get clean
 
 # Install Risc-V toolchain
