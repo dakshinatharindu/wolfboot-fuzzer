@@ -286,7 +286,7 @@ class CDFGAnalyzer:
 # Example usage
 def main():
     # Replace with your binary path
-    binary_path = "./target_binary"
+    binary_path = "./wolfboot"
     
     # Initialize analyzer
     analyzer = CDFGAnalyzer(binary_path)
