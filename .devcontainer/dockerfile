@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     python3 \
     python3-pip \
+    python3.11-venv \
     lsb-release wget software-properties-common gnupg \
     ninja-build pkg-config libglib2.0-dev \
     qemu-utils qemu-system-misc \
